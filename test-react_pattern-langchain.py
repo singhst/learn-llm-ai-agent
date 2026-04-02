@@ -1,8 +1,3 @@
-"""
-pip install langchain-ollama langchain
-"""
-
-
 import os
 from langchain_ollama import ChatOllama
 from langchain.agents import AgentExecutor, create_react_agent
@@ -85,6 +80,10 @@ print()
 
 
 ### TESTING ###############################################
+# 
+# $ python3.8 -m virtualenv .venv
+# $ . .venv/bin/activate
+# (.venv)$ pip install -U langchain langchain-ollama langchain-community
 # 
 # $ python test-react_pattern-langchain.py
 # /xxx/.venv_langchain/lib/python3.8/site-packages/langsmith/client.py:241: LangSmithMissingAPIKeyWarning: API key must be provided when using hosted LangSmith API
