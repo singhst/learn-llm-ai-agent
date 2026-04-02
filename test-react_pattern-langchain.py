@@ -1,3 +1,8 @@
+"""
+pip install langchain-ollama langchain
+"""
+
+
 import os
 from langchain_ollama import ChatOllama
 from langchain.agents import AgentExecutor, create_react_agent
