@@ -48,7 +48,8 @@ def calc_gain(input_str: str) -> str:
 tools = [get_current_price, calc_gain]
 
 # 2. 初始化 Ollama 模型 (Qwen 3.5)
-llm = ChatOllama(model="qwen3.5:9b", temperature=0) # 請確保名稱與你本地下載的一致
+# llm = ChatOllama(model="qwen3.5:9b", temperature=0) # 請確保名稱與你本地下載的一致
+llm = ChatOllama(model="gemma4:e4b", temperature=0)
 
 # 3. 取得 ReAct Prompt 模板
 prompt = hub.pull("hwchase17/react")
@@ -83,25 +84,22 @@ print()
 # 
 # $ python3.8 -m virtualenv .venv
 # $ . .venv/bin/activate
-# (.venv)$ pip install -U langchain langchain-ollama langchain-community
-# 
-# $ python test-react_pattern-langchain.py
+# (.venv)$ $ .venv_langchain/bin/python test-react_pattern-langchain.py
 # /xxx/.venv_langchain/lib/python3.8/site-packages/langsmith/client.py:241: LangSmithMissingAPIKeyWarning: API key must be provided when using hosted LangSmith API
 #   warnings.warn(
-
+# 
 # --- 問題 ---
 # I bought NVDA at $110. What is my current profit percentage? Explain briefly 
-
+# 
 # Error in StdOutCallbackHandler.on_chain_start callback: AttributeError("'NoneType' object has no attribute 'get'")
-# Thought: I need to get the current price of NVDA first to calculate the profit percentage.
+# Thought: The user wants to calculate the current profit percentage for NVDA, given a purchase price of $110. To do this, I first need to get the current price of NVDA using the `get_current_price` tool.
 # Action: get_current_price
-# Action Input: NVDA130.0Thought: Now I need to calculate the profit percentage using the buy price of $110 and current price of $130.
+# Action Input: NVDA130.0Thought: I have the purchase price ($110) and the current price ($130.0). I can now use the `calc_gain` tool to calculate the profit percentage.
 # Action: calc_gain
-# Action Input: 110,13018.18%Thought: I now know the final answer  
-# Final Answer: Your current profit percentage is 18.18%. This is calculated based on the current NVDA price of $130 compared to your buy price of $110.
-
+# Action Input: 110,130.018.18%Thought: I have successfully retrieved the current price of NVDA ($130.0) and calculated the profit percentage using the provided purchase price ($110). The result is 18.18%. I can now formulate the final answer, explaining the calculation briefly.
+# Final Answer: Your current profit percentage on NVDA is 18.18%. This was calculated by comparing your purchase price of $110 to the current market price of $130.0.
+# 
 # > Finished chain.
-
+# 
 # --- 最終結果 ---
-# {'input': 'I bought NVDA at $110. What is my current profit percentage? Explain briefly', 'output': 'Your current profit percentage is 18.18%. This is calculated based on the current NVDA price of $130 compared to your buy price of $110.'}
-#
+# {'input': 'I bought NVDA at $110. What is my current profit percentage? Explain briefly', 'output': 'Your current profit percentage on NVDA is 18.18%. This was calculated by comparing your purchase price of $110 to the current market price of $130.0.'}
