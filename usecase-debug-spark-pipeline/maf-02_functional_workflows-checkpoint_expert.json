@@ -1,0 +1,4 @@
+{
+  "run_id": "run_99482",
+  "analysis_preview": "您好，作為一位頂尖的 Spark 性能優化專家，我已經仔細分析了您的錯誤日誌。\n\n這個錯誤日誌的分析非常明確，它不僅是一個單純的記憶體不足問題，更深層的原因出在**資料分佈不均 (Data Skew)**，導致資源分配產生極端的負載傾斜。\n\n---\n\n### 🔎 專業分析與根本原因 (Root Cause Analysis)\n\n**1. 錯誤判斷：**\n*   **OOM 類型：** `java.lang.OutOfMemoryError: GC overhead limit exceeded.`\n*   **根本原因 (Root Cause)：** **資料傾斜 (Data Skew)**，發生在 `BroadcastHashJoin` 最佳化步驟。\n\n**2. 深入解釋：**\n*   `BroadcastHashJoin` 的原理是將較小型的資料表（或單個分區）廣播到所有 Execut"
+}

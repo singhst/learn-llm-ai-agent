@@ -1,0 +1,4 @@
+{
+  "run_id": "run_99482",
+  "content_preview": "Error in Databricks Job: java.lang.OutOfMemoryError: GC overhead limit exceeded. Reason: Data skew detected in BroadcastHashJoin optimization step. Failed task ID: task_2026_06_02."
+}
