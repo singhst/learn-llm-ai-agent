@@ -57,7 +57,8 @@ async def main():
     
     # 修正：OllamaChatClient 初始化不帶 options
     # client = OllamaChatClient(model_id="qwen2.5:7b")
-    client = OllamaChatClient(model_id="qwen3.5:9b")
+    # client = OllamaChatClient(model_id="qwen3.5:9b")
+    client = OllamaChatClient(model_id="gemma4:e4b")
     
     # 修正：參數應該放在這裡 (或是根據你的 SDK 版本，可能需要直接在 Ollama 模型端調校)
     agent = client.as_agent(

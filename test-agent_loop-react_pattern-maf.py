@@ -31,7 +31,8 @@ You are a Microsoft Agent. Use the ReAct pattern: Thought -> Action -> Observati
 async def run_maf_agent():
     # Initialize the Ollama Client
     # MAF defaults to http://localhost:11434
-    client = OllamaChatClient(model_id="qwen2.5:7b")
+    # client = OllamaChatClient(model_id="qwen2.5:7b")
+    client = OllamaChatClient(model_id="gemma4:e4b")
 
     # Create the agent using the .as_agent() factory method
     # This is the standard way in the latest MAF Python SDK
