@@ -42,17 +42,17 @@ This repository is a small learning collection for working with Microsoft Agent 
 
 Additional usecase scripts:
 
-- `usecase-agent-interprets-pyspark-error/test-multi_agent-maf-01_simple-debug-databricks-job.py`
-  - Small multi-agent example that fetches Databricks job logs (simulate) and demonstrates triage/collector/expert roles.
+- `usecase-agent-interprets-pyspark-error/test-multi_agent-maf-01_simple-debug-pyspark-job.py`
+  - Small multi-agent example that fetches pyspark job logs (simulate) and demonstrates triage/collector/expert roles.
 
-- `usecase-agent-interprets-pyspark-error/test-multi_agent-maf-02_functional_workflows-debug-databricks-job.py`
-  - Functional-workflow variant for multi-agent debugging of Databricks errors.
+- `usecase-agent-interprets-pyspark-error/test-multi_agent-maf-02_functional_workflows-debug-pyspark-job.py`
+  - Functional-workflow variant for multi-agent debugging of pyspark errors.
 
-- `usecase-agent-interprets-pyspark-error/test-multi_agent-maf-03_graph_based_workflows-debug-databricks-job.py`
+- `usecase-agent-interprets-pyspark-error/test-multi_agent-maf-03_graph_based_workflows-debug-pyspark-job.py`
   - Graph-based workflow example coordinating agents for log collection (simulate) and analysis.
 
-- `usecase-agent-interprets-pyspark-error/test-single_agent-maf-fetch-log-databricks.py`
-  - Single-agent example focused on fetching Databricks logs (simulate) and returning raw diagnostics.
+- `usecase-agent-interprets-pyspark-error/test-single_agent-maf-fetch-log-pyspark.py`
+  - Single-agent example focused on fetching pyspark logs (simulate) and returning raw diagnostics.
   
 </details>
 
